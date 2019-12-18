@@ -30,4 +30,6 @@ The following prerequisites apply if you wish to modify and build your own copy 
 
 ### How to run
 1. Run the executable in  
->>>>>>> 30a99a10cfaa0b099e8b308ee066d72864d18f7a
+=======
+1. Run the executable `BudgetCalculator\Release\BudgetCalculator.exe`
+
