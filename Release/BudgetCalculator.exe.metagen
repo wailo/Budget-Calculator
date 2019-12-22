@@ -32,7 +32,8 @@ Class BudgetCalculator.OutputWindow: AutoLayout, AnsiClass, Class, Public, Befor
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
-    colorinput(): PrivateScope, Public, HideBySig
+    colorInput(): PrivateScope, Public, HideBySig
+    valueInput(): PrivateScope, Public, HideBySig
 Class BudgetCalculator.RecreationsWindow: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -47,6 +48,12 @@ Class BudgetCalculator.InputWindow: AutoLayout, AnsiClass, Class, Public, Before
     BudgetCalculator.SavingsWindow savingswindow : Public
     BudgetCalculator.RecreationsWindow recreatiosnwindow : Public
     BudgetCalculator.EssentialsWindow essentialswindow : Public
+  Methods:
+    getTotalEssentials(Int32, Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    getTotalBills(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    getTotalRecreations(Int32, Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    getTotalSavings(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    getTotalSpendings(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
 Class BudgetCalculator.MainWindow: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

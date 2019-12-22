@@ -53,18 +53,6 @@ ref class OutputWindow : public System::Windows::Forms::Form {
 public:
   OutputWindow(void) {
     InitializeComponent();
-    colorinput();
-    this->essentialAllowance->Text =
-        Convert::ToString((totalIncome / 10) * 2.5);
-    this->billsAllowance->Text = Convert::ToString((totalIncome / 10) * 2.5);
-    this->recreationAllowance->Text = Convert::ToString((totalIncome / 10) * 3);
-    this->savingsAllowance->Text = Convert::ToString((totalIncome / 10) * 2);
-    this->totalAllowance->Text = Convert::ToString(totalIncome);
-    this->essentialSpending->Text = Convert::ToString(totalEssentials);
-    this->billsSpending->Text = Convert::ToString(totalBills);
-    this->recreationsSpending->Text = Convert::ToString(totalRecreations);
-    this->savingsSpending->Text = Convert::ToString(totalSavings);
-    this->totalSpending->Text = Convert::ToString(totalSpendings);
 
     this->pieChart->Series["budget"]->Points->AddXY("Essentials",
                                                     totalEssentials);
@@ -79,40 +67,11 @@ public:
     this->colChart->Series["Recreations"]->Points->AddXY("Recreations",
                                                          totalRecreations);
     this->colChart->Series["Savings"]->Points->AddXY("Savings", totalSavings);
-    //
-    // TODO: Add the constructor code here
-    //
   }
 
-  void colorinput() {
-    if (totalEssentials > ((totalIncome / 10) * 2.5)) {
-      this->essentialSpending->ForeColor = System::Drawing::Color::Red;
+  void colorInput();
 
-    } else {
-      this->essentialSpending->ForeColor = System::Drawing::Color::Green;
-    }
-
-    if (totalBills > ((totalIncome / 10) * 2.5)) {
-      this->billsSpending->ForeColor = System::Drawing::Color::Red;
-
-    } else {
-      this->billsSpending->ForeColor = System::Drawing::Color::Green;
-    }
-
-    if (totalRecreations > ((totalIncome / 10) * 3)) {
-      this->recreationsSpending->ForeColor = System::Drawing::Color::Red;
-
-    } else {
-      this->recreationsSpending->ForeColor = System::Drawing::Color::Green;
-    }
-
-    if (totalSavings > ((totalIncome / 10) * 2)) {
-      this->savingsSpending->ForeColor = System::Drawing::Color::Red;
-
-    } else {
-      this->savingsSpending->ForeColor = System::Drawing::Color::Green;
-    }
-  }
+  void valueInput();
 
 private:
   System::Windows::Forms::Panel ^ panel1;
@@ -358,8 +317,6 @@ private:
     this->essentialSpending->Size = System::Drawing::Size(20, 23);
     this->essentialSpending->TabIndex = 19;
     this->essentialSpending->Text = L"0";
-    this->essentialSpending->Click += gcnew System::EventHandler(
-        this, &OutputWindow::essentialSpending_Click);
     //
     // billsSpending
     //
@@ -672,6 +629,10 @@ private:
          this->pieChart))
         ->EndInit();
     this->ResumeLayout(false);
+    std::cout << "here" << std::endl;
+    colorInput();
+
+    valueInput();
   }
 
 #pragma endregion

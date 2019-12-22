@@ -57,12 +57,22 @@ using namespace System::Drawing;
 public
 ref class InputWindow : public System::Windows::Forms::Form {
 public:
-  InputWindow(void) {
-    InitializeComponent();
-    //
-    // TODO: Add the constructor code here
-    //
-  }
+  InputWindow(void) { InitializeComponent(); }
+
+  int getTotalEssentials(int inputChildcareBill, int inputDebtsAndLoansBill,
+                         int inputGroceriesBill, int inputTransportationBill,
+                         int inputPetsBill, int inputOtherEssentials);
+  int getTotalBills(int inputElectrictyBill, int inputWaterBill,
+                    int inputGasBill, int inputRentBill, int inputInternetBill,
+                    int inputPhoneBill, int inputHealthInsuranceBill,
+                    int inputOtherBill);
+  int getTotalRecreations(int inputEatOutBill, int inputGymBill,
+                          int inputTicketsBill, int inputGiftsBill,
+                          int inputHolidaysBill, int inputOtherRecreations);
+  int getTotalSavings(int inputEmergencyBill, int inputHomeRepairsBill,
+                      int inputCarRepairsBill, int inputOtherSavings);
+  int getTotalSpendings(int totalEssentials, int totalBills,
+                        int totalRecreations, int totalSavings);
 
   BillsWindow ^ billswindow = gcnew BillsWindow();
   SavingsWindow ^ savingswindow = gcnew SavingsWindow();
@@ -403,34 +413,7 @@ private:
 private:
   System::Void textBox10_TextChanged(System::Object ^ sender,
                                      System::EventArgs ^ e) {}
-  // private: System::Void button1_Click(System::Object^ sender,
-  // System::EventArgs^ e) {
-  //
-  //	 //int inputSalary = Convert::ToInt32(income->Text);
-  //	 //int inputHome = Convert::ToInt32(home->Text);
-  //	 //int inputBills = Convert::ToInt32(bills->Text);
-  //	 //int inputFood = Convert::ToInt32(food->Text);
-  //	 //int inputChildren = Convert::ToInt32(children->Text);
-  //	 //int inputTransport = Convert::ToInt32(transport->Text);
-  //	 //int inputPets = Convert::ToInt32(pets->Text);
 
-  //	 //int inputInvest = Convert::ToInt32(invest->Text);
-  //	 //int inputCredit = Convert::ToInt32(credit->Text);
-  //	 //int inputHealth = Convert::ToInt32(health->Text);
-  //	 //int inputIncidentials = Convert::ToInt32(incidentials->Text);
-  //	 //int inputGifts = Convert::ToInt32(gifts->Text);
-
-  //	 //int totalEssentials = inputHome + inputBills + inputFood +
-  //inputChildren + inputTransport + inputPets;
-
-  //	 //int totalRecreation = inputInvest + inputCredit + inputHealth +
-  //inputIncidentials + inputGifts;
-
-  //	 this->Hide();
-  //	 OutputWindow^ outputWindow = gcnew OutputWindow();
-  //	 outputWindow->Show();
-
-  //}
 private:
   System::Void textBox9_TextChanged(System::Object ^ sender,
                                     System::EventArgs ^ e) {}
@@ -484,20 +467,25 @@ private:
   System::Void AnalyzeButton_Click(System::Object ^ sender,
                                    System::EventArgs ^ e) {
     totalIncome = Convert::ToInt32(this->income->Text);
-    totalEssentials =
-        (inputChildcareBill + inputDebtsAndLoansBill + inputGroceriesBill +
-         inputTransportationBill + inputPetsBill + inputOtherEssentials);
-    totalBills = (inputElectrictyBill + inputWaterBill + inputGasBill +
-                  inputRentBill + inputInternetBill + inputPhoneBill +
-                  inputHealthInsuranceBill + inputOtherBill);
-    totalRecreations =
-        (inputEatOutBill + inputGymBill + inputTicketsBill + inputGiftsBill +
-         inputHolidaysBill + inputOtherRecreations);
-    totalSavings = (inputEmergencyBill + inputHomeRepairsBill +
-                    inputCarRepairsBill + inputOtherSavings);
-    totalSpendings =
-        (totalEssentials + totalBills + totalRecreations + totalSavings);
-    std::cout << totalSpendings << endl;
+
+    totalEssentials = getTotalEssentials(
+        inputChildcareBill, inputDebtsAndLoansBill, inputGroceriesBill,
+        inputTransportationBill, inputPetsBill, inputOtherEssentials);
+
+    totalBills =
+        getTotalBills(inputElectrictyBill, inputWaterBill, inputGasBill,
+                      inputRentBill, inputInternetBill, inputPhoneBill,
+                      inputHealthInsuranceBill, inputOtherBill);
+
+    totalRecreations = getTotalRecreations(
+        inputEatOutBill, inputGymBill, inputTicketsBill, inputGiftsBill,
+        inputHolidaysBill, inputOtherRecreations);
+
+    totalSavings = getTotalSavings(inputEmergencyBill, inputHomeRepairsBill,
+                                   inputCarRepairsBill, inputOtherSavings);
+
+    totalSpendings = getTotalSpendings(totalEssentials, totalBills,
+                                       totalRecreations, totalSavings);
 
     OutputWindow ^ outputwindow = gcnew OutputWindow();
     outputwindow->Show();
