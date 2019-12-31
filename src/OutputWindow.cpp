@@ -1,6 +1,5 @@
-#include "../include/pch.h"
-#include "../include/OutputWindow.h"
-#include <iostream>
+#include "pch.h"
+#include "OutputWindow.h"
 
 
 void BudgetCalculator::OutputWindow::colorInput() {

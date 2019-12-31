@@ -1,5 +1,5 @@
-#include "../include/pch.h"
-#include "../include/MainWindow.h"
+#include "pch.h"
+#include "MainWindow.h"
 
 
 using namespace System;

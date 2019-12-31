@@ -1,50 +1,35 @@
-#include "../include/pch.h"
-#include "../include/InputWindow.h"
+#include "pch.h"
+#include "InputWindow.h"
 
+int BudgetCalculator::InputWindow::getTotalEssentials()
+{
 
-int BudgetCalculator::InputWindow::getTotalEssentials(
-    int inputChildcareBill, int inputDebtsAndLoansBill, int inputGroceriesBill,
-    int inputTransportationBill, int inputPetsBill, int inputOtherEssentials) {
-  totalEssentials =
-      (inputChildcareBill + inputDebtsAndLoansBill + inputGroceriesBill +
-       inputTransportationBill + inputPetsBill + inputOtherEssentials);
-  return totalEssentials;
+    return essentialswindow->essentials.inputChildcareBill + essentialswindow->essentials.inputDebtsAndLoansBill + essentialswindow->essentials.inputGroceriesBill + essentialswindow->essentials.inputOtherEssentials + essentialswindow->essentials.inputPetsBill + essentialswindow->essentials.inputTransportationBill;
 }
 
-int BudgetCalculator::InputWindow::getTotalBills(
-    int inputElectrictyBill, int inputWaterBill, int inputGasBill,
-    int inputRentBill, int inputInternetBill, int inputPhoneBill,
-    int inputHealthInsuranceBill, int inputOtherBill) {
-  totalBills = (inputElectrictyBill + inputWaterBill + inputGasBill +
-                inputRentBill + inputInternetBill + inputPhoneBill +
-                inputHealthInsuranceBill + inputOtherBill);
-  return totalBills;
+int BudgetCalculator::InputWindow::getTotalBills()
+{
+    return billswindow->bills.inputElectrictyBill + billswindow->bills.inputGasBill + billswindow->bills.inputHealthInsuranceBill + billswindow->bills.inputInternetBill + billswindow->bills.inputInternetBill + billswindow->bills.inputOtherBill + billswindow->bills.inputPhoneBill + billswindow->bills.inputRentBill + billswindow->bills.inputWaterBill;
 }
 
-int BudgetCalculator::InputWindow::getTotalRecreations(
-    int inputEatOutBill, int inputGymBill, int inputTicketsBill,
-    int inputGiftsBill, int inputHolidaysBill, int inputOtherRecreations) {
-  totalRecreations =
-      (inputEatOutBill + inputGymBill + inputTicketsBill + inputGiftsBill +
-       inputHolidaysBill + inputOtherRecreations);
-  return totalRecreations;
+
+int BudgetCalculator::InputWindow::getTotalRecreations() 
+{
+    return recreatiosnwindow->recreations.inputEatOutBill + recreatiosnwindow->recreations.inputGiftsBill + recreatiosnwindow->recreations.inputGymBill + recreatiosnwindow->recreations.inputHolidaysBill + recreatiosnwindow->recreations.inputOtherRecreations + recreatiosnwindow->recreations.inputTicketsBill;
 }
 
-int BudgetCalculator::InputWindow::getTotalSavings(int inputEmergencyBill,
-                                                   int inputHomeRepairsBill,
-                                                   int inputCarRepairsBill,
-                                                   int inputOtherSavings) {
+int BudgetCalculator::InputWindow::getTotalSavings() {
 
-  totalSavings = (inputEmergencyBill + inputHomeRepairsBill +
-                  inputCarRepairsBill + inputOtherSavings);
-  return totalSavings;
+    return savingswindow->savings.inputCarRepairsBill + savingswindow->savings.inputEmergencyBill + savingswindow->savings.inputHomeRepairsBill + savingswindow->savings.inputOtherSavings;
 }
 
 int BudgetCalculator::InputWindow::getTotalSpendings(int totalEssentials,
                                                      int totalBills,
                                                      int totalRecreations,
                                                      int totalSavings) {
-  totalSpendings =
-      (totalEssentials + totalBills + totalRecreations + totalSavings);
-  return totalSpendings;
+    totalEssentials = getTotalEssentials();
+    totalBills = getTotalBills();
+    totalRecreations = getTotalRecreations();
+    totalSavings = getTotalSavings();
+  return totalEssentials + totalBills + totalRecreations + totalSavings;
 }

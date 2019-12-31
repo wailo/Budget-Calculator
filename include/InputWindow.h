@@ -7,34 +7,6 @@
 #include "RecreationsWindow.h"
 #include "SavingsWindow.h"
 
-int extern inputChildcareBill;
-int extern inputDebtsAndLoansBill;
-int extern inputGroceriesBill;
-int extern inputTransportationBill;
-int extern inputPetsBill;
-int extern inputOtherEssentials;
-
-int extern inputElectrictyBill;
-int extern inputWaterBill;
-int extern inputGasBill;
-int extern inputRentBill;
-int extern inputInternetBill;
-int extern inputPhoneBill;
-int extern inputHealthInsuranceBill;
-int extern inputOtherBill;
-
-int extern inputEatOutBill;
-int extern inputGymBill;
-int extern inputTicketsBill;
-int extern inputGiftsBill;
-int extern inputHolidaysBill;
-int extern inputOtherRecreations;
-
-int extern inputEmergencyBill;
-int extern inputHomeRepairsBill;
-int extern inputCarRepairsBill;
-int extern inputOtherSavings;
-
 int totalIncome;
 int totalSpendings;
 int totalEssentials;
@@ -43,6 +15,8 @@ int totalRecreations;
 int totalSavings;
 
 namespace BudgetCalculator {
+
+
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -57,27 +31,18 @@ using namespace System::Drawing;
 public
 ref class InputWindow : public System::Windows::Forms::Form {
 public:
+    BillsWindow^ billswindow = gcnew BillsWindow();
+    SavingsWindow^ savingswindow = gcnew SavingsWindow();
+    RecreationsWindow^ recreatiosnwindow = gcnew RecreationsWindow();
+    EssentialsWindow^ essentialswindow = gcnew EssentialsWindow();
   InputWindow(void) { InitializeComponent(); }
 
-  int getTotalEssentials(int inputChildcareBill, int inputDebtsAndLoansBill,
-                         int inputGroceriesBill, int inputTransportationBill,
-                         int inputPetsBill, int inputOtherEssentials);
-  int getTotalBills(int inputElectrictyBill, int inputWaterBill,
-                    int inputGasBill, int inputRentBill, int inputInternetBill,
-                    int inputPhoneBill, int inputHealthInsuranceBill,
-                    int inputOtherBill);
-  int getTotalRecreations(int inputEatOutBill, int inputGymBill,
-                          int inputTicketsBill, int inputGiftsBill,
-                          int inputHolidaysBill, int inputOtherRecreations);
-  int getTotalSavings(int inputEmergencyBill, int inputHomeRepairsBill,
-                      int inputCarRepairsBill, int inputOtherSavings);
+  int getTotalEssentials();
+  int getTotalBills();
+  int getTotalRecreations();
+  int getTotalSavings();
   int getTotalSpendings(int totalEssentials, int totalBills,
                         int totalRecreations, int totalSavings);
-
-  BillsWindow ^ billswindow = gcnew BillsWindow();
-  SavingsWindow ^ savingswindow = gcnew SavingsWindow();
-  RecreationsWindow ^ recreatiosnwindow = gcnew RecreationsWindow();
-  EssentialsWindow ^ essentialswindow = gcnew EssentialsWindow();
 
 protected:
   /// <summary>
@@ -468,21 +433,14 @@ private:
                                    System::EventArgs ^ e) {
     totalIncome = Convert::ToInt32(this->income->Text);
 
-    totalEssentials = getTotalEssentials(
-        inputChildcareBill, inputDebtsAndLoansBill, inputGroceriesBill,
-        inputTransportationBill, inputPetsBill, inputOtherEssentials);
+    totalEssentials = getTotalEssentials();
 
     totalBills =
-        getTotalBills(inputElectrictyBill, inputWaterBill, inputGasBill,
-                      inputRentBill, inputInternetBill, inputPhoneBill,
-                      inputHealthInsuranceBill, inputOtherBill);
+        getTotalBills();
 
-    totalRecreations = getTotalRecreations(
-        inputEatOutBill, inputGymBill, inputTicketsBill, inputGiftsBill,
-        inputHolidaysBill, inputOtherRecreations);
+    totalRecreations = getTotalRecreations();
 
-    totalSavings = getTotalSavings(inputEmergencyBill, inputHomeRepairsBill,
-                                   inputCarRepairsBill, inputOtherSavings);
+    totalSavings = getTotalSavings();
 
     totalSpendings = getTotalSpendings(totalEssentials, totalBills,
                                        totalRecreations, totalSavings);

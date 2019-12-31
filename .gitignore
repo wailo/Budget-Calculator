@@ -29,3 +29,6 @@
 *.out
 *.app
 .vs/*
+/resources/x64/Debug/BudgetCalculator.tlog
+/resources/x64/Debug
+/x64/Debug

@@ -1,14 +1,8 @@
 #pragma once
 
-#include "InputWindow.h"
+//#include "InputWindow.h"
 #include "pch.h"
 
-int inputGroceriesBill;
-int inputTransportationBill;
-int inputChildcareBill;
-int inputPetsBill;
-int inputDebtsAndLoansBill;
-int inputOtherEssentials;
 
 namespace BudgetCalculator {
 
@@ -33,6 +27,16 @@ public:
     // TODO: Add the constructor code here
     //
   }
+
+  ref struct essentialsStruct
+  {
+      int inputGroceriesBill;
+      int inputTransportationBill;
+      int inputChildcareBill;
+      int inputPetsBill;
+      int inputDebtsAndLoansBill;
+      int inputOtherEssentials;
+  }essentials;
 
 protected:
   /// <summary>
@@ -369,17 +373,12 @@ private:
 private:
   System::Void EssentialsSaveButton_Click(System::Object ^ sender,
                                           System::EventArgs ^ e) {
-    inputGroceriesBill = Convert::ToInt32(GroceriesBill->Text);
-    inputTransportationBill = Convert::ToInt32(TransportationBill->Text);
-    inputChildcareBill = Convert::ToInt32(ChildcareBill->Text);
-    inputPetsBill = Convert::ToInt32(PetsBill->Text);
-    inputDebtsAndLoansBill = Convert::ToInt32(DebtsAndLoansBill->Text);
-    inputOtherEssentials = Convert::ToInt32(OtherEssentials->Text);
-    std::cout << to_string(inputChildcareBill + inputDebtsAndLoansBill +
-                           inputGroceriesBill + inputTransportationBill +
-                           inputPetsBill + inputOtherEssentials)
-              << endl;
-
+    essentials.inputGroceriesBill = Convert::ToInt32(GroceriesBill->Text);
+    essentials.inputTransportationBill = Convert::ToInt32(TransportationBill->Text);
+    essentials.inputChildcareBill = Convert::ToInt32(ChildcareBill->Text);
+    essentials.inputPetsBill = Convert::ToInt32(PetsBill->Text);
+    essentials.inputDebtsAndLoansBill = Convert::ToInt32(DebtsAndLoansBill->Text);
+    essentials.inputOtherEssentials = Convert::ToInt32(OtherEssentials->Text);
     this->Hide();
   }
 

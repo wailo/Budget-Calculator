@@ -1,11 +1,6 @@
 #pragma once
 
-#include "InputWindow.h"
-
-int inputEmergencyBill;
-int inputHomeRepairsBill;
-int inputCarRepairsBill;
-int inputOtherSavings;
+//#include "InputWindow.h"
 
 namespace BudgetCalculator {
 
@@ -24,10 +19,16 @@ ref class SavingsWindow : public System::Windows::Forms::Form {
 public:
   SavingsWindow(void) {
     InitializeComponent();
-    //
-    // TODO: Add the constructor code here
-    //
   }
+
+  ref struct savingsStruct {
+
+      int inputEmergencyBill;
+      int inputHomeRepairsBill;
+      int inputCarRepairsBill;
+      int inputOtherSavings;
+
+  } savings;
 
 protected:
   /// <summary>
@@ -287,11 +288,11 @@ private:
 private:
   System::Void SavingsSaveButton_Click(System::Object ^ sender,
                                        System::EventArgs ^ e) {
-
-    inputEmergencyBill = Convert::ToInt32(EmergencyBill->Text);
-    inputHomeRepairsBill = Convert::ToInt32(HomeRepairBill->Text);
-    inputCarRepairsBill = Convert::ToInt32(CarRepairBill->Text);
-    inputOtherSavings = Convert::ToInt32(OtherSavings->Text);
+    
+    savings.inputEmergencyBill = Convert::ToInt32(EmergencyBill->Text);
+    savings.inputHomeRepairsBill = Convert::ToInt32(HomeRepairBill->Text);
+    savings.inputCarRepairsBill = Convert::ToInt32(CarRepairBill->Text);
+    savings.inputOtherSavings = Convert::ToInt32(OtherSavings->Text);
 
     this->Hide();
   }

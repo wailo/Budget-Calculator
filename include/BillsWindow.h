@@ -1,15 +1,8 @@
 
 #pragma once
 
-#include "InputWindow.h"
-int inputElectrictyBill;
-int inputWaterBill;
-int inputGasBill;
-int inputRentBill;
-int inputInternetBill;
-int inputPhoneBill;
-int inputHealthInsuranceBill;
-int inputOtherBill;
+//#include "InputWindow.h"
+//#include "pch.h"
 
 namespace BudgetCalculator {
 
@@ -33,6 +26,18 @@ public:
     //
   }
 
+  ref struct billsStruct {
+
+      int  inputElectrictyBill;
+      int  inputWaterBill;
+      int  inputGasBill;
+      int  inputRentBill;
+      int  inputInternetBill;
+      int  inputPhoneBill;
+      int  inputHealthInsuranceBill;
+      int  inputOtherBill;
+
+  } bills;
 protected:
   /// <summary>
   /// Clean up any resources being used.
@@ -46,7 +51,6 @@ protected:
 private:
   System::Windows::Forms::Panel ^ panel1;
 
-protected:
 private:
   System::Windows::Forms::Panel ^ panel2;
 
@@ -419,18 +423,6 @@ private:
 private:
   System::Void BillSaveButton_Click(System::Object ^ sender,
                                     System::EventArgs ^ e) {
-    inputElectrictyBill = Convert::ToInt32(ElectricityBill->Text);
-    inputWaterBill = Convert::ToInt32(WaterBill->Text);
-    inputGasBill = Convert::ToInt32(GasBill->Text);
-    inputRentBill = Convert::ToInt32(RentBill->Text);
-    inputInternetBill = Convert::ToInt32(InternetBill->Text);
-    inputPhoneBill = Convert::ToInt32(PhoneBill->Text);
-    inputHealthInsuranceBill = Convert::ToInt32(HealthInsuranceBill->Text);
-    inputOtherBill = Convert::ToInt32(OtherBill->Text);
-    this->Hide();
-
-    // InputWindow^ inputwindow = gcnew InputWindow();
-    // inputwindow->Show();
   }
 
 private:

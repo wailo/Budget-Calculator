@@ -1,13 +1,6 @@
 #pragma once
 
-#include "InputWindow.h"
-
-int inputEatOutBill;
-int inputGymBill;
-int inputTicketsBill;
-int inputGiftsBill;
-int inputHolidaysBill;
-int inputOtherRecreations;
+//#include "InputWindow.h"
 
 namespace BudgetCalculator {
 
@@ -30,6 +23,16 @@ public:
     // TODO: Add the constructor code here
     //
   }
+  ref struct recreationsStruct {
+
+      int inputEatOutBill;
+      int inputGymBill;
+      int inputTicketsBill;
+      int inputGiftsBill;
+      int inputHolidaysBill;
+      int inputOtherRecreations;
+
+  } recreations;
 
 protected:
   /// <summary>
@@ -348,12 +351,12 @@ private:
 private:
   System::Void RecreationsSaveButton_Click(System::Object ^ sender,
                                            System::EventArgs ^ e) {
-    inputEatOutBill = Convert::ToInt32(EatOutBill->Text);
-    inputGymBill = Convert::ToInt32(GymBill->Text);
-    inputTicketsBill = Convert::ToInt32(TicketsBill->Text);
-    inputGiftsBill = Convert::ToInt32(GiftsBill->Text);
-    inputHolidaysBill = Convert::ToInt32(HolidaysBill->Text);
-    inputOtherRecreations = Convert::ToInt32(OtherRecreations->Text);
+    //recreations->inputEatOutBill = Convert::ToInt32(EatOutBill->Text);
+    //inputGymBill = Convert::ToInt32(GymBill->Text);
+    //inputTicketsBill = Convert::ToInt32(TicketsBill->Text);
+    //inputGiftsBill = Convert::ToInt32(GiftsBill->Text);
+    //inputHolidaysBill = Convert::ToInt32(HolidaysBill->Text);
+    //inputOtherRecreations = Convert::ToInt32(OtherRecreations->Text);
     this->Hide();
   }
 
