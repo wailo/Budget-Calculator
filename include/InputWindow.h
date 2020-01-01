@@ -7,16 +7,7 @@
 #include "RecreationsWindow.h"
 #include "SavingsWindow.h"
 
-int totalIncome;
-int totalSpendings;
-int totalEssentials;
-int totalBills;
-int totalRecreations;
-int totalSavings;
-
 namespace BudgetCalculator {
-
-
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -31,10 +22,16 @@ using namespace System::Drawing;
 public
 ref class InputWindow : public System::Windows::Forms::Form {
 public:
-    BillsWindow^ billswindow = gcnew BillsWindow();
-    SavingsWindow^ savingswindow = gcnew SavingsWindow();
-    RecreationsWindow^ recreatiosnwindow = gcnew RecreationsWindow();
-    EssentialsWindow^ essentialswindow = gcnew EssentialsWindow();
+  int totalIncome;
+  int totalSpendings;
+  int totalEssentials;
+  int totalBills;
+  int totalRecreations;
+  int totalSavings;
+  BillsWindow ^ billswindow = gcnew BillsWindow();
+  SavingsWindow ^ savingswindow = gcnew SavingsWindow();
+  RecreationsWindow ^ recreatiosnwindow = gcnew RecreationsWindow();
+  EssentialsWindow ^ essentialswindow = gcnew EssentialsWindow();
   InputWindow(void) { InitializeComponent(); }
 
   int getTotalEssentials();
@@ -435,8 +432,7 @@ private:
 
     totalEssentials = getTotalEssentials();
 
-    totalBills =
-        getTotalBills();
+    totalBills = getTotalBills();
 
     totalRecreations = getTotalRecreations();
 
@@ -444,8 +440,9 @@ private:
 
     totalSpendings = getTotalSpendings(totalEssentials, totalBills,
                                        totalRecreations, totalSavings);
-
-    OutputWindow ^ outputwindow = gcnew OutputWindow();
+    OutputWindow ^ outputwindow =
+        gcnew OutputWindow(totalIncome, totalSpendings, totalEssentials,
+                           totalBills, totalRecreations, totalSavings);
     outputwindow->Show();
   }
 };
