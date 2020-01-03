@@ -1,9 +1,9 @@
-#include "OutputWindow.h"
 #include "pch.h"
+#include "OutputWindow.h"
 
 void BudgetCalculator::OutputWindow::getVariables(
-    int totalIncome, int totalSpendings, int totalEssentials, int totalBills,
-    int totalRecreations, int totalSavings) {
+    const int totalIncome, const int totalSpendings, const int totalEssentials,
+    const int totalBills, const int totalRecreations, const int totalSavings) {
 
   outputVariables.outputIncome = totalIncome;
   outputVariables.outputBills = totalBills;
@@ -14,8 +14,8 @@ void BudgetCalculator::OutputWindow::getVariables(
 }
 
 void BudgetCalculator::OutputWindow::colorInput(
-    int totalIncome, int totalSpendings, int totalEssentials, int totalBills,
-    int totalRecreations, int totalSavings) {
+    const int totalIncome, const int totalSpendings, const int totalEssentials,
+    const int totalBills, const int totalRecreations, const int totalSavings) {
   if (outputVariables.outputEssentials >
       ((outputVariables.outputIncome / 10) * 2.5)) {
     this->essentialSpending->ForeColor = System::Drawing::Color::Red;
@@ -50,8 +50,8 @@ void BudgetCalculator::OutputWindow::colorInput(
 }
 
 void BudgetCalculator::OutputWindow::valueInput(
-    int totalIncome, int totalSpendings, int totalEssentials, int totalBills,
-    int totalRecreations, int totalSavings) {
+    const int totalIncome, const int totalSpendings, const int totalEssentials,
+    const int totalBills, const int totalRecreations, const int totalSavings) {
   this->essentialAllowance->Text =
       Convert::ToString((outputVariables.outputIncome / 10) * 2.5);
   this->billsAllowance->Text =
