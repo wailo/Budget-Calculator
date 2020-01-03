@@ -112,7 +112,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
       <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
     </Link>
@@ -139,7 +139,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
