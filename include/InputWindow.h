@@ -430,20 +430,25 @@ private:
                                    System::EventArgs ^ e) {
     totalIncome = Convert::ToInt32(this->income->Text);
 
-    totalEssentials = getTotalEssentials();
+    if (totalIncome <= 0) {
+      MessageBox::Show("Take-Home income cannot be 0 or negative.");
+      this->income->BackColor = System::Drawing::Color::Red;
+    } else {
+      totalEssentials = getTotalEssentials();
 
-    totalBills = getTotalBills();
+      totalBills = getTotalBills();
 
-    totalRecreations = getTotalRecreations();
+      totalRecreations = getTotalRecreations();
 
-    totalSavings = getTotalSavings();
+      totalSavings = getTotalSavings();
 
-    totalSpendings = getTotalSpendings(totalEssentials, totalBills,
-                                       totalRecreations, totalSavings);
-    OutputWindow ^ outputwindow =
-        gcnew OutputWindow(totalIncome, totalSpendings, totalEssentials,
-                           totalBills, totalRecreations, totalSavings);
-    outputwindow->Show();
+      totalSpendings = getTotalSpendings(totalEssentials, totalBills,
+                                         totalRecreations, totalSavings);
+      OutputWindow ^ outputwindow =
+          gcnew OutputWindow(totalIncome, totalSpendings, totalEssentials,
+                             totalBills, totalRecreations, totalSavings);
+      outputwindow->Show();
+    }
   }
 };
 } // namespace BudgetCalculator

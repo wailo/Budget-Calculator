@@ -1,5 +1,5 @@
-#include "OutputWindow.h"
 #include "pch.h"
+#include "OutputWindow.h"
 
 void BudgetCalculator::OutputWindow::getVariables(
     int totalIncome, int totalSpendings, int totalEssentials, int totalBills,

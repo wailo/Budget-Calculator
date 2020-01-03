@@ -57,6 +57,12 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\ImageContentTask.props" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\lc.props" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\marmasm.props" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\MeshContentTask.props" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\ShaderGraphContentTask.props" />
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
@@ -200,29 +206,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BillsWindow.resx">
-      <DependentUpon>BillsWindow.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EssentialsWindow.resx">
-      <DependentUpon>EssentialsWindow.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InputWindow.resx">
-      <DependentUpon>InputWindow.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.resx">
-      <DependentUpon>MainWindow.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OutputWindow.resx">
-      <DependentUpon>OutputWindow.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RecreationsWindow.resx">
-      <DependentUpon>RecreationsWindow.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SavingsWindow.resx">
-      <DependentUpon>SavingsWindow.h</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="BillsWindow.resx" />
+    <EmbeddedResource Include="EssentialsWindow.resx" />
+    <EmbeddedResource Include="InputWindow.resx" />
+    <EmbeddedResource Include="MainWindow.resx" />
+    <EmbeddedResource Include="OutputWindow.resx" />
+    <EmbeddedResource Include="RecreationsWindow.resx" />
+    <EmbeddedResource Include="SavingsWindow.resx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\ImageContentTask.targets" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\lc.targets" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\marmasm.targets" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\MeshContentTask.targets" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\ShaderGraphContentTask.targets" />
   </ImportGroup>
 </Project>
