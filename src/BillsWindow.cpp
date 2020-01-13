@@ -15,6 +15,11 @@ BudgetCalculator::BillsWindow::BillSaveButton_Click(System::Object ^ sender,
   this->Hide();
 }
 
+BudgetCalculator::BillsWindow::BillsWindow(void)
+{
+    InitializeComponent();
+}
+
 void BudgetCalculator::BillsWindow::InitializeComponent(void) {
   this->panel1 = (gcnew System::Windows::Forms::Panel());
   this->label1 = (gcnew System::Windows::Forms::Label());

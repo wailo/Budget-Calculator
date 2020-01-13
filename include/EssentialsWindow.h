@@ -13,8 +13,9 @@ using namespace std;
 ref class EssentialsWindow : public System::Windows::Forms::Form {
 
 public:
-  EssentialsWindow() { InitializeComponent(); }
-
+  // Constructor
+  EssentialsWindow();
+  // Structure to store essential bills values.
   ref struct essentialsStruct {
     int inputGroceriesBill;
     int inputTransportationBill;
@@ -25,8 +26,10 @@ public:
   } essentials;
 
 private:
+  // Function executed on clicking save button event.
   System::Void EssentialsSaveButton_Click(System::Object ^ sender,
                                           System::EventArgs ^ e);
+  // Window elements declarations
 
   System::Windows::Forms::RichTextBox ^ OtherEssentials;
 
@@ -67,7 +70,7 @@ private:
   System::ComponentModel::Container ^ components;
 
 #pragma region Windows Form Designer generated code
-
+  // Function to initialize window elements.
   void InitializeComponent();
 #pragma endregion
 };

@@ -11,10 +11,11 @@ using namespace System::Drawing;
 
 ref class BillsWindow : public System::Windows::Forms::Form {
 public:
-  BillsWindow(void) { InitializeComponent(); }
+  // Constructor
+  BillsWindow(void);
 
+  // Structure to store bill values
   ref struct billsStruct {
-
     int inputElectrictyBill;
     int inputWaterBill;
     int inputGasBill;
@@ -23,13 +24,14 @@ public:
     int inputPhoneBill;
     int inputHealthInsuranceBill;
     int inputOtherBill;
-
   } bills;
 
 private:
+  // Save button
   System::Void BudgetCalculator::BillsWindow::BillSaveButton_Click(
       System::Object ^ sender, System::EventArgs ^ e);
 
+  // Window forms declerations
   System::Windows::Forms::Panel ^ panel1;
 
   System::Windows::Forms::Panel ^ panel2;
@@ -76,7 +78,8 @@ private:
 
   System::ComponentModel::Container ^ components;
 
+  // Inititalize window element function
   void InitializeComponent(void);
 #pragma endregion
 };
-}
+} // namespace BudgetCalculator

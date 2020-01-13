@@ -1,6 +1,11 @@
 #include "pch.h"
 #include "RecreationsWindow.h"
 
+BudgetCalculator::RecreationsWindow::RecreationsWindow(void)
+{
+    InitializeComponent();
+}
+
 System::Void BudgetCalculator::RecreationsWindow::RecreationsSaveButton_Click(
     System::Object ^ sender, System::EventArgs ^ e) {
   recreations.inputEatOutBill = Convert::ToInt32(EatOutBill->Text);

@@ -1,6 +1,11 @@
 #include "pch.h"
 #include "InputWindow.h"
 
+BudgetCalculator::InputWindow::InputWindow(void)
+{
+    InitializeComponent();
+}
+
 int BudgetCalculator::InputWindow::getTotalEssentials() {
 
   return essentialswindow->essentials.inputChildcareBill +

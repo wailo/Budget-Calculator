@@ -11,8 +11,9 @@ using namespace System::Drawing;
 
 ref class SavingsWindow : public System::Windows::Forms::Form {
 public:
+  // Constructor
   SavingsWindow(void);
-
+  // Structure to store saving bills values.
   ref struct savingsStruct {
 
     int inputEmergencyBill;
@@ -23,9 +24,10 @@ public:
   } savings;
 
 private:
+  // Function executed on clicking save button event.
   System::Void SavingsSaveButton_Click(System::Object ^ sender,
                                        System::EventArgs ^ e);
-
+  // Window elements declarations
   System::Windows::Forms::Label ^ label9;
 
   System::Windows::Forms::RichTextBox ^ OtherSavings;
@@ -57,8 +59,8 @@ private:
   System::ComponentModel::Container ^ components;
 
 #pragma region Windows Form Designer generated code
-
+  // Function to initialize window elements.
   void InitializeComponent(void);
 #pragma endregion
 };
-}
+} // namespace BudgetCalculator

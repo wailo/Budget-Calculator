@@ -1,6 +1,11 @@
 #include "pch.h"
 #include "EssentialsWindow.h"
 
+BudgetCalculator::EssentialsWindow::EssentialsWindow()
+{
+    InitializeComponent();
+}
+
 System::Void BudgetCalculator::EssentialsWindow::EssentialsSaveButton_Click(
     System::Object ^ sender, System::EventArgs ^ e) {
   essentials.inputGroceriesBill = Convert::ToInt32(GroceriesBill->Text);

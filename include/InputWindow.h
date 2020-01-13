@@ -18,26 +18,34 @@ using namespace System::Drawing;
 
 ref class InputWindow : public System::Windows::Forms::Form {
 public:
+  // Declare class member data
   int totalIncome;
   int totalSpendings;
   int totalEssentials;
   int totalBills;
   int totalRecreations;
   int totalSavings;
+  // Declare instances of each window (bills, savings, recreations, essentials)
   BillsWindow ^ billswindow = gcnew BillsWindow();
   SavingsWindow ^ savingswindow = gcnew SavingsWindow();
   RecreationsWindow ^ recreatiosnwindow = gcnew RecreationsWindow();
   EssentialsWindow ^ essentialswindow = gcnew EssentialsWindow();
-  InputWindow(void) { InitializeComponent(); }
-
+  // Constructor
+  InputWindow(void);
+  // Function to get the total value of essential bills
   int getTotalEssentials();
+  // Function to get the total value of bill bills
   int getTotalBills();
+  // Function to get the total value of recreation bills
   int getTotalRecreations();
+  // Function to get the total value of saving bills
   int getTotalSavings();
+  // Function to get the total value of all bills
   int getTotalSpendings(int totalEssentials, int totalBills,
                         int totalRecreations, int totalSavings);
 
 private:
+  // Window elements declarations
   System::Windows::Forms::Label ^ label1;
 
   System::ComponentModel::Container ^ components;
@@ -71,23 +79,23 @@ private:
   System::Windows::Forms::Panel ^ panel1;
 
 #pragma region Windows Form Designer generated code
-
+  // Function to initialize window elements.
   void InitializeComponent(void);
 #pragma endregion
-
+  // Function executed on clicking bills button event.
   System::Void BillsButton_Click(System::Object ^ sender,
                                  System::EventArgs ^ e);
-
+  // Function executed on clicking savings button event.
   System::Void SavingsButton_Click(System::Object ^ sender,
                                    System::EventArgs ^ e);
-
+  // Function executed on clicking recreations button event.
   System::Void RecreationsButton_Click(System::Object ^ sender,
                                        System::EventArgs ^ e);
-
+  // Function executed on clicking essentials button event.
   System::Void EssentialsButton_Click(System::Object ^ sender,
                                       System::EventArgs ^ e);
-
+  // Function executed on clicking analyze button event.
   System::Void AnalyzeButton_Click(System::Object ^ sender,
                                    System::EventArgs ^ e);
 };
-}
+} // namespace BudgetCalculator

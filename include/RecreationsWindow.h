@@ -11,23 +11,23 @@ using namespace System::Drawing;
 
 ref class RecreationsWindow : public System::Windows::Forms::Form {
 public:
-  RecreationsWindow(void) { InitializeComponent(); }
-
+  // Constructor
+  RecreationsWindow(void);
+  // Structure to store recreation bills values.
   ref struct recreationsStruct {
-
     int inputEatOutBill;
     int inputGymBill;
     int inputTicketsBill;
     int inputGiftsBill;
     int inputHolidaysBill;
     int inputOtherRecreations;
-
   } recreations;
 
 private:
+  // Function executed on clicking save button event.
   System::Void RecreationsSaveButton_Click(System::Object ^ sender,
                                            System::EventArgs ^ e);
-
+  // Window elements declarations
   System::Windows::Forms::Label ^ label9;
 
   System::Windows::Forms::RichTextBox ^ OtherRecreations;
@@ -67,8 +67,8 @@ private:
   System::ComponentModel::Container ^ components;
 
 #pragma region Windows Form Designer generated code
-
+  // Function to initialize window elements.
   void InitializeComponent(void);
 #pragma endregion
 };
-}
+} // namespace BudgetCalculator

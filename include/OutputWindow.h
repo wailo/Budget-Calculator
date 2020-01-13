@@ -12,9 +12,10 @@ using namespace System::Drawing;
 ref class OutputWindow : public System::Windows::Forms::Form {
 
 public:
+  // Constructor
   OutputWindow(int totalIncome, int totalSpendings, int totalEssentials,
                int totalBills, int totalRecreations, int totalSavings);
-
+  // Structure to store calculated bills values.
   ref struct outputStruct {
     int outputIncome;
     int outputSpendings;
@@ -37,6 +38,7 @@ public:
                   int totalBills, int totalRecreations, int totalSavings);
 
 private:
+  // Window elements declarations
   System::Windows::Forms::Panel ^ panel1;
 
   System::Windows::Forms::Label ^ label1;
@@ -90,14 +92,14 @@ private:
   System::ComponentModel::Container ^ components;
 
 #pragma region Windows Form Designer generated code
-
+  // Function to initialize window elements.
   void InitializeComponent(void);
 
 #pragma endregion
-
+  // Function executed on clicking edit button event.
   System::Void AnalyzeButton_Click(System::Object ^ sender,
                                    System::EventArgs ^ e);
-
+  // Function executed on clicking exit button event.
   System::Void button1_Click(System::Object ^ sender, System::EventArgs ^ e);
 };
-}
+} // namespace BudgetCalculator
