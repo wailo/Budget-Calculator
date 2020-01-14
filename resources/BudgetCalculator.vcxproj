@@ -99,6 +99,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\oisy9\Documents\GitHub\BudgetCalculator\image;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\include;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\resources;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
@@ -114,7 +115,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ShowIncludes>true</ShowIncludes>
-      <AdditionalIncludeDirectories>C:\Users\oisy9\Documents\GitHub\BudgetCalculator\resources;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\oisy9\Documents\GitHub\BudgetCalculator\image;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\include;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\resources;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
@@ -129,6 +130,7 @@
       <PrecompiledHeaderFile>../include/pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\oisy9\Documents\GitHub\BudgetCalculator\image;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\include;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\resources;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
@@ -141,7 +143,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\oisy9\Documents\GitHub\BudgetCalculator\resources;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\oisy9\Documents\GitHub\BudgetCalculator\image;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\include;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\resources;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
