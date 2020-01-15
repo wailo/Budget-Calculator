@@ -51,8 +51,6 @@ void BudgetCalculator::EssentialsWindow::InitializeComponent() {
   this->OtherEssentials->Size = System::Drawing::Size(165, 33);
   this->OtherEssentials->TabIndex = 14;
   this->OtherEssentials->Text = L"0";
-  this->OtherEssentials->TextChanged += gcnew System::EventHandler(
-      this, &EssentialsWindow::OtherEssentials_TextChanged);
   //
   // DebtsAndLoansBill
   //
@@ -93,8 +91,6 @@ void BudgetCalculator::EssentialsWindow::InitializeComponent() {
   this->GroceriesBill->Size = System::Drawing::Size(165, 33);
   this->GroceriesBill->TabIndex = 0;
   this->GroceriesBill->Text = L"0";
-  this->GroceriesBill->TextChanged += gcnew System::EventHandler(
-      this, &EssentialsWindow::GroceriesBill_TextChanged);
   //
   // label1
   //
@@ -107,8 +103,6 @@ void BudgetCalculator::EssentialsWindow::InitializeComponent() {
   this->label1->Size = System::Drawing::Size(184, 45);
   this->label1->TabIndex = 0;
   this->label1->Text = L"Essentials";
-  this->label1->Click +=
-      gcnew System::EventHandler(this, &EssentialsWindow::label1_Click);
   //
   // panel8
   //
@@ -206,8 +200,6 @@ void BudgetCalculator::EssentialsWindow::InitializeComponent() {
   this->label2->Size = System::Drawing::Size(177, 45);
   this->label2->TabIndex = 1;
   this->label2->Text = L"Groceries";
-  this->label2->Click +=
-      gcnew System::EventHandler(this, &EssentialsWindow::label2_Click);
   //
   // EssentialsSaveButton
   //
