@@ -291,28 +291,24 @@ void BudgetCalculator::InputWindow::InitializeComponent(void) {
 System::Void
 BudgetCalculator::InputWindow::BillsButton_Click(System::Object ^ sender,
                                                  System::EventArgs ^ e) {
-  BillsWindow ^ billswindow = gcnew BillsWindow();
   billswindow->Show();
 }
 
 System::Void
 BudgetCalculator::InputWindow::SavingsButton_Click(System::Object ^ sender,
                                                    System::EventArgs ^ e) {
-  SavingsWindow ^ savingswindow = gcnew SavingsWindow();
   savingswindow->Show();
 }
 
 System::Void
 BudgetCalculator::InputWindow::RecreationsButton_Click(System::Object ^ sender,
                                                        System::EventArgs ^ e) {
-  RecreationsWindow ^ savingswindow = gcnew RecreationsWindow();
   recreatiosnwindow->Show();
 }
 
 System::Void
 BudgetCalculator::InputWindow::EssentialsButton_Click(System::Object ^ sender,
                                                       System::EventArgs ^ e) {
-  EssentialsWindow ^ essentialswindow = gcnew EssentialsWindow();
   essentialswindow->Show();
 }
 

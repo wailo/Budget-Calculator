@@ -10,11 +10,9 @@ BudgetCalculator::OutputWindow::OutputWindow(
   getVariables(totalIncome, totalSpendings, totalEssentials, totalBills,
                totalRecreations, totalSavings);
 
-  colorInput(totalIncome, totalSpendings, totalEssentials, totalBills,
-             totalRecreations, totalSavings);
+  colorInput();
 
-  valueInput(totalIncome, totalSpendings, totalEssentials, totalBills,
-             totalRecreations, totalSavings);
+  valueInput();
 
   // Charts drawing
 
@@ -34,8 +32,8 @@ BudgetCalculator::OutputWindow::OutputWindow(
 }
 
 void BudgetCalculator::OutputWindow::getVariables(
-    int totalIncome, int totalSpendings, int totalEssentials, int totalBills,
-    int totalRecreations, int totalSavings) {
+    int const totalIncome, int const totalSpendings, int const totalEssentials, int const totalBills,
+    int const totalRecreations, int const totalSavings) {
 
   outputVariables.outputIncome = totalIncome;
   outputVariables.outputBills = totalBills;
@@ -45,9 +43,7 @@ void BudgetCalculator::OutputWindow::getVariables(
   outputVariables.outputSpendings = totalSpendings;
 }
 
-void BudgetCalculator::OutputWindow::colorInput(
-    int totalIncome, int totalSpendings, int totalEssentials, int totalBills,
-    int totalRecreations, int totalSavings) {
+void BudgetCalculator::OutputWindow::colorInput() {
   if (outputVariables.outputEssentials >
       ((outputVariables.outputIncome / 10) * 2.5)) {
     this->essentialSpending->ForeColor = System::Drawing::Color::Red;
@@ -81,9 +77,7 @@ void BudgetCalculator::OutputWindow::colorInput(
   }
 }
 
-void BudgetCalculator::OutputWindow::valueInput(
-    int totalIncome, int totalSpendings, int totalEssentials, int totalBills,
-    int totalRecreations, int totalSavings) {
+void BudgetCalculator::OutputWindow::valueInput() {
   this->essentialAllowance->Text =
       Convert::ToString((outputVariables.outputIncome / 10) * 2.5);
   this->billsAllowance->Text =

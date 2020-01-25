@@ -26,16 +26,14 @@ public:
   } outputVariables;
   // Function to assign outputVariables structure to the user input variables
   // from InputWindow
-  void getVariables(int totalIncome, int totalSpendings, int totalEssentials,
-                    int totalBills, int totalRecreations, int totalSavings);
+  void getVariables(int const totalIncome, int const totalSpendings, int const totalEssentials,
+                    int const totalBills, int const totalRecreations, int const totalSavings);
   // Function to color the values by red or green depending if the specific
   // budget exceeds allowance or not.
-  void colorInput(int totalIncome, int totalSpendings, int totalEssentials,
-                  int totalBills, int totalRecreations, int totalSavings);
+  void colorInput();
   // Function to assign OutputWindow text items to the variables of
   // outputVariables structure.
-  void valueInput(int totalIncome, int totalSpendings, int totalEssentials,
-                  int totalBills, int totalRecreations, int totalSavings);
+  void valueInput();
 
 private:
   // Window elements declarations
