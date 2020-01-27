@@ -115,7 +115,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ShowIncludes>true</ShowIncludes>
-      <AdditionalIncludeDirectories>C:\Users\oisy9\Documents\GitHub\BudgetCalculator\image;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\include;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\resources;C:\Users\oisy9\Documents\GitHub\BudgetCalculator\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\image;$(SolutionDir)\include;$(SolutionDir)\resources;$(SolutionDir)\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
