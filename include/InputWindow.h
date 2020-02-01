@@ -7,7 +7,8 @@
 #include "RecreationsWindow.h"
 #include "SavingsWindow.h"
 
-namespace BudgetCalculator {
+namespace BudgetCalculator
+{
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -16,86 +17,165 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
-ref class InputWindow : public System::Windows::Forms::Form {
-public:
-  // Declare class member data
-  int totalIncome;
-  int totalSpendings;
-  int totalEssentials;
-  int totalBills;
-  int totalRecreations;
-  int totalSavings;
-  // Declare instances of each window (bills, savings, recreations, essentials)
-  BillsWindow ^ billswindow = gcnew BillsWindow();
-  SavingsWindow ^ savingswindow = gcnew SavingsWindow();
-  RecreationsWindow ^ recreatiosnwindow = gcnew RecreationsWindow();
-  EssentialsWindow ^ essentialswindow = gcnew EssentialsWindow();
-  // Constructor
-  InputWindow(void);
-  // Function to get the total value of essential bills
-  int getTotalEssentials();
-  // Function to get the total value of bill bills
-  int getTotalBills();
-  // Function to get the total value of recreation bills
-  int getTotalRecreations();
-  // Function to get the total value of saving bills
-  int getTotalSavings();
-  // Function to get the total value of all bills
-  int getTotalSpendings(int totalEssentials, int totalBills,
-                        int totalRecreations, int totalSavings);
+ref class InputWindow : public System::Windows::Forms::Form
+{
+  public:
+    // integer to store user's income.
+    int totalIncome;
 
-private:
-  // Window elements declarations
-  System::Windows::Forms::Label ^ label1;
+    // integer to store the sum of user's total spendings.
+    int totalSpendings;
 
-  System::ComponentModel::Container ^ components;
+    // integer to store the sum of user's total essentials.
+    int totalEssentials;
 
-  System::Windows::Forms::Panel ^ panel2;
+    // integer to store the sum of user's total bills.
+    int totalBills;
 
-  System::Windows::Forms::Panel ^ panel5;
+    // integer to store the sum of user's total recreations.
+    int totalRecreations;
 
-  System::Windows::Forms::Button ^ EssentialsButton;
+    // integer to store the sum of user's total savings.
+    int totalSavings;
 
-  System::Windows::Forms::Panel ^ panel6;
+    // Declare instances of each window (bills, savings, recreations, essentials)
+    BillsWindow ^ billswindow = gcnew BillsWindow();
+    SavingsWindow ^ savingswindow = gcnew SavingsWindow();
+    RecreationsWindow ^ recreatiosnwindow = gcnew RecreationsWindow();
+    EssentialsWindow ^ essentialswindow = gcnew EssentialsWindow();
 
-  System::Windows::Forms::Button ^ BillsButton;
+    /**
+     * Constructor
+     *
+     * @param NA.
+     * @return NA.
+     */
+    InputWindow(void);
 
-  System::Windows::Forms::Panel ^ panel7;
+    /**
+     * Sums the essential bills values
+     *
+     * @param NA.
+     * @return integer of total essential bills.
+     */
+    int getTotalEssentials();
 
-  System::Windows::Forms::Button ^ SavingsButton;
+    /**
+     * Sums the bill bills values
+     *
+     * @param NA.
+     * @return integer of total bill bills.
+     */
+    int getTotalBills();
 
-  System::Windows::Forms::Panel ^ panel3;
+    /**
+     * Sums the recreation bills values
+     *
+     * @param NA.
+     * @return integer of total recreation bills.
+     */
+    int getTotalRecreations();
 
-  System::Windows::Forms::Button ^ RecreationsButton;
+    /**
+     * Sums the saving bills values
+     *
+     * @param NA.
+     * @return integer of total saving bills.
+     */
+    int getTotalSavings();
 
-  System::Windows::Forms::Panel ^ panel8;
+    /**
+     * Sums all bills values
+     *
+     * @param NA.
+     * @return integer of total  bills.
+     */
+    int getTotalSpendings();
 
-  System::Windows::Forms::RichTextBox ^ income;
+  private:
+    // Window elements declarations
+    System::Windows::Forms::Label ^ label1;
 
-  System::Windows::Forms::Button ^ AnalyzeButton;
+    System::ComponentModel::Container ^ components;
 
-  System::ComponentModel::BackgroundWorker ^ backgroundWorker1;
+    System::Windows::Forms::Panel ^ panel2;
 
-  System::Windows::Forms::Panel ^ panel1;
+    System::Windows::Forms::Panel ^ panel5;
+
+    System::Windows::Forms::Button ^ EssentialsButton;
+
+    System::Windows::Forms::Panel ^ panel6;
+
+    System::Windows::Forms::Button ^ BillsButton;
+
+    System::Windows::Forms::Panel ^ panel7;
+
+    System::Windows::Forms::Button ^ SavingsButton;
+
+    System::Windows::Forms::Panel ^ panel3;
+
+    System::Windows::Forms::Button ^ RecreationsButton;
+
+    System::Windows::Forms::Panel ^ panel8;
+
+    System::Windows::Forms::RichTextBox ^ income;
+
+    System::Windows::Forms::Button ^ AnalyzeButton;
+
+    System::ComponentModel::BackgroundWorker ^ backgroundWorker1;
+
+    System::Windows::Forms::Panel ^ panel1;
 
 #pragma region Windows Form Designer generated code
-  // Function to initialize window elements.
-  void InitializeComponent(void);
+
+    /**
+     * Sums the essential bills values
+     *
+     * @param NA.
+     * @return integer of total essential bills.
+     */
+    void InitializeComponent(void);
+
 #pragma endregion
-  // Function executed on clicking bills button event.
-  System::Void BillsButton_Click(System::Object ^ sender,
-                                 System::EventArgs ^ e);
-  // Function executed on clicking savings button event.
-  System::Void SavingsButton_Click(System::Object ^ sender,
-                                   System::EventArgs ^ e);
-  // Function executed on clicking recreations button event.
-  System::Void RecreationsButton_Click(System::Object ^ sender,
-                                       System::EventArgs ^ e);
-  // Function executed on clicking essentials button event.
-  System::Void EssentialsButton_Click(System::Object ^ sender,
-                                      System::EventArgs ^ e);
-  // Function executed on clicking analyze button event.
-  System::Void AnalyzeButton_Click(System::Object ^ sender,
-                                   System::EventArgs ^ e);
+
+    /**
+     * Shows bills window
+     *
+     * @param Click object, Event argument.
+     * @return NA.
+     */
+    System::Void BillsButton_Click(System::Object ^ sender, System::EventArgs ^ e);
+
+    /**
+     * Shows saving window
+     *
+     * @param Click object, Event argument.
+     * @return NA.
+     */
+    System::Void SavingsButton_Click(System::Object ^ sender, System::EventArgs ^ e);
+
+    /**
+     * Shows recreation window
+     *
+     * @param Click object, Event argument.
+     * @return NA.
+     */
+    System::Void RecreationsButton_Click(System::Object ^ sender, System::EventArgs ^ e);
+
+    /**
+     * Shows essential window
+     *
+     * @param Click object, Event argument.
+     * @return NA.
+     */
+    System::Void EssentialsButton_Click(System::Object ^ sender, System::EventArgs ^ e);
+
+    /**
+     * Calculates user inputs
+     *
+     * @param Click object, Event argument.
+     * @return NA.
+     */
+    System::Void AnalyzeButton_Click(System::Object ^ sender, System::EventArgs ^ e);
 };
 } // namespace BudgetCalculator

@@ -3,7 +3,8 @@
 
 #include "InputWindow.h"
 
-namespace BudgetCalculator {
+namespace BudgetCalculator
+{
 
 using namespace System;
 using namespace System::ComponentModel;
@@ -12,23 +13,40 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
-ref class MainWindow : public System::Windows::Forms::Form {
-public:
-  // Constructor
-  MainWindow(void);
+ref class MainWindow : public System::Windows::Forms::Form
+{
+  public:
+    /**
+     * Constructor
+     *
+     * @param NA.
+     * @return NA.
+     */
+    MainWindow(void);
 
-private:
-  // Window elements declarations
-  System::Windows::Forms::Button ^ button1;
+  private:
+    // Window elements declarations
+    System::Windows::Forms::Button ^ button1;
 
-  System::ComponentModel::Container ^ components;
+    System::ComponentModel::Container ^ components;
 
 #pragma region Windows Form Designer generated code
-  // Function to initialize window elements.
-  void InitializeComponent(void);
+
+    /**
+     * Initializes window components and items.
+     *
+     * @param NA.
+     * @return NA.
+     */
+    void InitializeComponent(void);
 #pragma endregion
-private:
-  // Function executed on clicking start button event.
-  System::Void button1_Click(System::Object ^ sender, System::EventArgs ^ e);
+  private:
+    /**
+     * Starts the application
+     *
+     * @param Click object, event arguement.
+     * @return NA.
+     */
+    System::Void button1_Click(System::Object ^ sender, System::EventArgs ^ e);
 };
 } // namespace BudgetCalculator
