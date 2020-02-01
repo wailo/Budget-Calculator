@@ -17,32 +17,41 @@ ref class EssentialsWindow : public System::Windows::Forms::Form
   public:
     /**
      * Constructor
-     *
-     * @param NA.
-     * @return NA.
      */
     EssentialsWindow();
 
     // Structure to store essential bills values.
     ref struct essentialsStruct
     {
+        //! Groceries bill
         int inputGroceriesBill;
+
+        //! Transportation bill
         int inputTransportationBill;
+
+        //! Childcare bill
         int inputChildcareBill;
+
+        //! Pets bill
         int inputPetsBill;
+
+        //! Debts and loans bill
         int inputDebtsAndLoansBill;
+
+        //! Other essentials
         int inputOtherEssentials;
+
     } essentials;
 
   private:
     /**
      * Saves user's essential bills input
      *
-     * @param Click object, event arguement.
-     * @return NA.
+     * @param sender, object that initiated the event
+     * @param e, event object
      */
-
     System::Void EssentialsSaveButton_Click(System::Object ^ sender, System::EventArgs ^ e);
+
     // Window elements declarations
 
     System::Windows::Forms::RichTextBox ^ OtherEssentials;
@@ -84,11 +93,9 @@ ref class EssentialsWindow : public System::Windows::Forms::Form
     System::ComponentModel::Container ^ components;
 
 #pragma region Windows Form Designer generated code
+
     /**
      * Initializes window components and items
-     *
-     * @param NA.
-     * @return NA.
      */
     void InitializeComponent();
 #pragma endregion

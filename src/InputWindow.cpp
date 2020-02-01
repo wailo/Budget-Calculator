@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "InputWindow.h"
 
-
 BudgetCalculator::InputWindow::InputWindow(void)
 {
     InitializeComponent();
@@ -17,7 +16,7 @@ int BudgetCalculator::InputWindow::getTotalEssentials()
 
 int BudgetCalculator::InputWindow::getTotalBills()
 {
-    return billswindow->bills.inputElectrictyBill + billswindow->bills.inputGasBill +
+    return billswindow->bills.inputElectricityBill + billswindow->bills.inputGasBill +
            billswindow->bills.inputHealthInsuranceBill + billswindow->bills.inputInternetBill +
            billswindow->bills.inputInternetBill + billswindow->bills.inputOtherBill +
            billswindow->bills.inputPhoneBill + billswindow->bills.inputRentBill + billswindow->bills.inputWaterBill;

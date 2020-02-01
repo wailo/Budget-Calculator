@@ -20,22 +20,22 @@ using namespace System::Drawing;
 ref class InputWindow : public System::Windows::Forms::Form
 {
   public:
-    // integer to store user's income.
+    //! User's income.
     int totalIncome;
 
-    // integer to store the sum of user's total spendings.
+    //! The sum of user's total spendings.
     int totalSpendings;
 
-    // integer to store the sum of user's total essentials.
+    //! The sum of user's total essentials.
     int totalEssentials;
 
-    // integer to store the sum of user's total bills.
+    //! The sum of user's total bills.
     int totalBills;
 
-    // integer to store the sum of user's total recreations.
+    //! The sum of user's total recreations.
     int totalRecreations;
 
-    // integer to store the sum of user's total savings.
+    //! The sum of user's total savings.
     int totalSavings;
 
     // Declare instances of each window (bills, savings, recreations, essentials)
@@ -46,16 +46,12 @@ ref class InputWindow : public System::Windows::Forms::Form
 
     /**
      * Constructor
-     *
-     * @param NA.
-     * @return NA.
      */
     InputWindow(void);
 
     /**
      * Sums the essential bills values
      *
-     * @param NA.
      * @return integer of total essential bills.
      */
     int getTotalEssentials();
@@ -63,7 +59,6 @@ ref class InputWindow : public System::Windows::Forms::Form
     /**
      * Sums the bill bills values
      *
-     * @param NA.
      * @return integer of total bill bills.
      */
     int getTotalBills();
@@ -71,7 +66,6 @@ ref class InputWindow : public System::Windows::Forms::Form
     /**
      * Sums the recreation bills values
      *
-     * @param NA.
      * @return integer of total recreation bills.
      */
     int getTotalRecreations();
@@ -79,7 +73,6 @@ ref class InputWindow : public System::Windows::Forms::Form
     /**
      * Sums the saving bills values
      *
-     * @param NA.
      * @return integer of total saving bills.
      */
     int getTotalSavings();
@@ -87,7 +80,6 @@ ref class InputWindow : public System::Windows::Forms::Form
     /**
      * Sums all bills values
      *
-     * @param NA.
      * @return integer of total  bills.
      */
     int getTotalSpendings();
@@ -131,7 +123,6 @@ ref class InputWindow : public System::Windows::Forms::Form
     /**
      * Sums the essential bills values
      *
-     * @param NA.
      * @return integer of total essential bills.
      */
     void InitializeComponent(void);
@@ -141,16 +132,16 @@ ref class InputWindow : public System::Windows::Forms::Form
     /**
      * Shows bills window
      *
-     * @param Click object, Event argument.
-     * @return NA.
+     * @param sender, object that initiated the event
+     * @param e, event object
      */
     System::Void BillsButton_Click(System::Object ^ sender, System::EventArgs ^ e);
 
     /**
      * Shows saving window
      *
-     * @param Click object, Event argument.
-     * @return NA.
+     * @param sender, object that initiated the event
+     * @param e, event object
      */
     System::Void SavingsButton_Click(System::Object ^ sender, System::EventArgs ^ e);
 
@@ -158,7 +149,6 @@ ref class InputWindow : public System::Windows::Forms::Form
      * Shows recreation window
      *
      * @param Click object, Event argument.
-     * @return NA.
      */
     System::Void RecreationsButton_Click(System::Object ^ sender, System::EventArgs ^ e);
 
@@ -166,7 +156,6 @@ ref class InputWindow : public System::Windows::Forms::Form
      * Shows essential window
      *
      * @param Click object, Event argument.
-     * @return NA.
      */
     System::Void EssentialsButton_Click(System::Object ^ sender, System::EventArgs ^ e);
 
@@ -174,7 +163,6 @@ ref class InputWindow : public System::Windows::Forms::Form
      * Calculates user inputs
      *
      * @param Click object, Event argument.
-     * @return NA.
      */
     System::Void AnalyzeButton_Click(System::Object ^ sender, System::EventArgs ^ e);
 };

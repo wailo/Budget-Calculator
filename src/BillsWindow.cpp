@@ -1,10 +1,9 @@
 #include "pch.h"
 #include "BillsWindow.h"
 
-
 System::Void BudgetCalculator::BillsWindow::BillSaveButton_Click(System::Object ^ sender, System::EventArgs ^ e)
 {
-    bills.inputElectrictyBill = Convert::ToInt32(ElectricityBill->Text);
+    bills.inputElectricityBill = Convert::ToInt32(ElectricityBill->Text);
     bills.inputGasBill = Convert::ToInt32(GasBill->Text);
     bills.inputHealthInsuranceBill = Convert::ToInt32(HealthInsuranceBill->Text);
     bills.inputInternetBill = Convert::ToInt32(InternetBill->Text);

@@ -18,9 +18,6 @@ ref class MainWindow : public System::Windows::Forms::Form
   public:
     /**
      * Constructor
-     *
-     * @param NA.
-     * @return NA.
      */
     MainWindow(void);
 
@@ -34,9 +31,6 @@ ref class MainWindow : public System::Windows::Forms::Form
 
     /**
      * Initializes window components and items.
-     *
-     * @param NA.
-     * @return NA.
      */
     void InitializeComponent(void);
 #pragma endregion
@@ -44,8 +38,8 @@ ref class MainWindow : public System::Windows::Forms::Form
     /**
      * Starts the application
      *
-     * @param Click object, event arguement.
-     * @return NA.
+     * @param sender, object that initiated the event
+     * @param e, event object
      */
     System::Void button1_Click(System::Object ^ sender, System::EventArgs ^ e);
 };

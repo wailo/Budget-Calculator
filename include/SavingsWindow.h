@@ -15,9 +15,6 @@ ref class SavingsWindow : public System::Windows::Forms::Form
   public:
     /**
      * Constructor
-     *
-     * @param NA.
-     * @return NA.
      */
     SavingsWindow(void);
 
@@ -25,9 +22,16 @@ ref class SavingsWindow : public System::Windows::Forms::Form
     ref struct savingsStruct
     {
 
+        //! Emergency bill
         int inputEmergencyBill;
+
+        //! Home Repairs bill
         int inputHomeRepairsBill;
+
+        //! Car Repairs bill
         int inputCarRepairsBill;
+
+        //! Other savings
         int inputOtherSavings;
 
     } savings;
@@ -76,8 +80,6 @@ ref class SavingsWindow : public System::Windows::Forms::Form
     /**
      * Initializes window components and items.
      *
-     * @param NA.
-     * @return NA.
      */
     void InitializeComponent(void);
 #pragma endregion

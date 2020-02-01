@@ -24,26 +24,42 @@ ref class BillsWindow : public System::Windows::Forms::Form
     // Structure to store bill values
     ref struct billsStruct
     {
+        //! Electricity bill
         int inputElectrictyBill;
+
+        //! Water bill
         int inputWaterBill;
+
+        //! Gas bill
         int inputGasBill;
+
+        //! Rent bill
         int inputRentBill;
+
+        //! Internet bill
         int inputInternetBill;
+
+        //! Phone bill
         int inputPhoneBill;
+
+        //! Health insurance bill
         int inputHealthInsuranceBill;
+
+        //! Other bill
         int inputOtherBill;
+
     } bills;
 
   private:
     /**
      * Saves user's bill bills input
      *
-     * @param Click object, event arguement.
-     * @return NA.
+     * @param sender, object that initiated the event
+     * @param e, event object
      */
     System::Void BudgetCalculator::BillsWindow::BillSaveButton_Click(System::Object ^ sender, System::EventArgs ^ e);
 
-    // Window forms declerations
+    // Window forms declarations
     System::Windows::Forms::Panel ^ panel1;
 
     System::Windows::Forms::Panel ^ panel2;
@@ -92,9 +108,6 @@ ref class BillsWindow : public System::Windows::Forms::Form
 
     /**
      * Initializes window components and items.
-     *
-     * @param NA.
-     * @return NA.
      */
     void InitializeComponent(void);
 #pragma endregion

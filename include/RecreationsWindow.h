@@ -15,20 +15,28 @@ ref class RecreationsWindow : public System::Windows::Forms::Form
   public:
     /**
      * Constructor
-     *
-     * @param NA.
-     * @return NA.
      */
     RecreationsWindow(void);
 
     // Structure to store recreation bills values.
     ref struct recreationsStruct
     {
+        //! Eat out bill
         int inputEatOutBill;
+
+        //! Gym bill
         int inputGymBill;
+
+        //! Tickets bill
         int inputTicketsBill;
+
+        //! Gifts bill
         int inputGiftsBill;
+
+        //! Holidays bill
         int inputHolidaysBill;
+
+        //! Other recreations
         int inputOtherRecreations;
     } recreations;
 
@@ -36,8 +44,8 @@ ref class RecreationsWindow : public System::Windows::Forms::Form
     /**
      * Saves user's recreation bills input
      *
-     * @param Click object, event arguement.
-     * @return NA.
+     * @param sender, object that initiated the event
+     * @param e, event object
      */
     System::Void RecreationsSaveButton_Click(System::Object ^ sender, System::EventArgs ^ e);
 
@@ -84,9 +92,6 @@ ref class RecreationsWindow : public System::Windows::Forms::Form
 
     /**
      * Initializes window components and items.
-     *
-     * @param NA.
-     * @return NA.
      */
     void InitializeComponent(void);
 #pragma endregion

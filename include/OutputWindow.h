@@ -117,9 +117,6 @@ ref class OutputWindow : public System::Windows::Forms::Form
 
     /**
      * Initializes window components and items.
-     *
-     * @param NA.
-     * @return NA.
      */
     void InitializeComponent(void);
 
@@ -128,7 +125,8 @@ ref class OutputWindow : public System::Windows::Forms::Form
     /**
      * Redirects back to inputWindow window.
      *
-     * @param Click object, event arguement.
+     * @param sender, object that initiated the event
+     * @param e, event object
      * @return NA.
      */
     System::Void AnalyzeButton_Click(System::Object ^ sender, System::EventArgs ^ e);
@@ -136,8 +134,8 @@ ref class OutputWindow : public System::Windows::Forms::Form
     /**
      * Exits the application.
      *
-     * @param Click object, event arguement.
-     * @return NA.
+     * @param sender, object that initiated the event
+     * @param e, event object
      */
     System::Void button1_Click(System::Object ^ sender, System::EventArgs ^ e);
 };
